@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-//перенаправление на страницу профиля, при успешной аутентификации
+//при отсутствии активной сессии перенаправление на корневую страницу с формой для входа
 
-if (isset($_SESSION['user'])) {
-    header('Location: profile.php');
+if (!$_SESSION['user']) {
+    header('Location: index.php');
 }
 ?>
 
@@ -13,16 +13,18 @@ if (isset($_SESSION['user'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>Изменение данных профиля</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<!-- страница с формой для ввода данных для регистрации -->
+<!-- страница с формой для изменения данных зарегистрированных пользователей -->
 
 <body>
     <form action="vendor/signup.php" method="post">
 
-        <h2>Регистрация</h2>
+        <h2>Изменение профиля</h2>
+
+        <!-- функционал обновления данных пока не реализован -->
 
         <label>Имя</label>
         <input type="text" name="name">
@@ -39,10 +41,10 @@ if (isset($_SESSION['user'])) {
         <label>Подтверждение пароля</label>
         <input type="password" name="password_confirm">
 
-        <button type="submit">Зарегистрироваться</button>
-        <a href="/">Уже есть аккаунт</a>
+        <a href="profile.php">Вернуться</a>
+        <a href="vendor/logout.php">Выход</a>
 
-        <!-- вывод ошибки аутентификации -->
+        <!-- вывод ошибки изменения данных -->
 
         <?php
         if (isset($_SESSION['message'])) {

@@ -13,7 +13,7 @@ if (isset($_SESSION['user'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Авторизация</title>
+    <title>Вход</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -21,6 +21,10 @@ if (isset($_SESSION['user'])) {
 
 <body>
     <form action="vendor/signin.php" method="post">
+
+        <h2>Главная страница</h2>
+
+        <!-- Yandex SmartCaptcha пока не подключена -->
 
         <label>Логин</label>
         <input type="text" name="login" placeholder="Почта или телефон">
