@@ -18,17 +18,17 @@ if ($password === $password_confirm) {
     имени пользователя, номера телефона и почты при регистрации
     и отправка сообщения, если имя, телефон или почта уже заняты*/
 
-    if (mysqli_query($connection, "SELECT name FROM users WHERE name = '$name'")) {
+    if (mysqli_num_rows(mysqli_query($connection, "SELECT name FROM users WHERE name = '$name'")) > 0) {
 
         $_SESSION['message'] = 'Пользователь c таким именем уже существует';
 
         header('Location: ../registration.php');
-    } elseif (mysqli_query($connection, "SELECT phone_number FROM users WHERE phone_number = '$phone_number'")) {
+    } elseif (mysqli_num_rows(mysqli_query($connection, "SELECT phone_number FROM users WHERE phone_number = '$phone_number'")) > 0) {
 
         $_SESSION['message'] = 'Пользователь c таким телефоном уже существует';
 
         header('Location: ../registration.php');
-    } elseif (mysqli_query($connection, "SELECT email FROM users WHERE email = '$email'")) {
+    } elseif (mysqli_num_rows(mysqli_query($connection, "SELECT email FROM users WHERE email = '$email'")) > 0) {
 
         $_SESSION['message'] = 'Пользователь c такой почтой уже существует';
 
