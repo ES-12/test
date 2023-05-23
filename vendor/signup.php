@@ -3,6 +3,8 @@
 session_start();
 require_once 'connection.php';
 
+//обработка запроса на регистрацию
+
 $name = $_POST['name'];
 $phone_number = $_POST['phone_number'];
 $email = $_POST['email'];
@@ -15,6 +17,10 @@ if ($password === $password_confirm) {
     mysqli_query($connection, "INSERT INTO `users`
         (`id`, `name`, `phone_number`, `email`, `password`)
         VALUES (NULL, '$name', '$phone_number', '$email', '$password') ");
+
+    /*при успешной регистрации и занесении данных в БД
+    перенаправление на корневую страницу для авторизации
+    и вывод сообщения об успешности операции*/
 
     $_SESSION['message'] = 'Регистрация завершена';
 

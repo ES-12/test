@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//перенаправление на страницу профиля, при успешной аутентификации
+
 if (isset($_SESSION['user'])) {
     header('Location: profile.php');
 }
@@ -14,6 +16,8 @@ if (isset($_SESSION['user'])) {
     <title>Регистрация</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
+<!-- страница с формой для ввода данных для регистрации -->
 
 <body>
     <form action="vendor/signup.php" method="post">
@@ -35,6 +39,8 @@ if (isset($_SESSION['user'])) {
 
         <button type="submit">Зарегистрироваться</button>
         <a href="/">Уже есть аккаунт</a>
+
+        <!-- вывод ошибки аутентификации -->
 
         <?php
         if (isset($_SESSION['message'])) {

@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//перенаправление на страницу профиля, при успешной аутентификации
+
 if (isset($_SESSION['user'])) {
     header('Location: profile.php');
 }
@@ -15,6 +17,8 @@ if (isset($_SESSION['user'])) {
     <link rel="stylesheet" href="css/main.css">
 </head>
 
+<!-- корневая страница, форма входа -->
+
 <body>
     <form action="vendor/signin.php" method="post">
 
@@ -26,6 +30,8 @@ if (isset($_SESSION['user'])) {
 
         <button type="submit">Войти</button>
         <a href="registration.php">Ещё нет аккаунта</a>
+
+        <!-- вывод ошибки аутентификации -->
 
         <?php
         if (isset($_SESSION['message'])) {

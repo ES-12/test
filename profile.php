@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//при отсутствии активной сессии перенаправление на корневую страницу с формой для входа
+
 if (!$_SESSION['user']) {
     header('Location: index.php');
 }
@@ -14,6 +16,8 @@ if (!$_SESSION['user']) {
     <title>Профиль</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
+<!-- страница с профилем пользователя и кнопкой для выхода -->
 
 <body>
     <form>
