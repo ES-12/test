@@ -20,28 +20,29 @@ if (!$_SESSION['user']) {
 <!-- страница с формой для изменения данных зарегистрированных пользователей -->
 
 <body>
-    <form action="vendor/editing.php" method="post">
+    <form action="vendor/name_edit.php" method="post">
 
         <h2>Изменение профиля</h2>
 
-        <!-- функционал обновления данных пока не реализован -->
-
         <label>Новое имя</label>
         <input type="text" name="name">
+        <button type="submit">Изменить имя</button>
 
         <label>Новый телефон</label>
         <input type="text" name="phone_number">
+        <button type="submit">Изменить телефон</button>
 
-        <label>новая почта</label>
+        <label>Новая почта</label>
         <input type="text" name="email">
+        <button type="submit">Изменить почту</button>
 
         <label>Новый пароль</label>
         <input type="password" name="password">
 
         <label>Подтверждение пароля</label>
         <input type="password" name="password_confirm">
+        <button type="submit">Изменить пароль</button>
 
-        <button type="submit">Изменение данных</button>
         <a href="profile.php">Вернуться</a>
         <a href="vendor/logout.php">Выход</a>
 

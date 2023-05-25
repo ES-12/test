@@ -22,11 +22,21 @@ if (!$_SESSION['user']) {
 <body>
     <form>
         <h2>Профиль пользователя</h2>
+        <!-- <h2>id: <?= $_SESSION['user']['id'] ?></h2> -->
         <h2>Имя: <?= $_SESSION['user']['name'] ?></h2>
         <h2>Телефон: <?= $_SESSION['user']['phone_number'] ?></h2>
         <h2>Почта: <?= $_SESSION['user']['email'] ?></h2>
         <a href="edit.php">Изменение данных</a>
         <a href="vendor/logout.php">Выход</a>
+
+
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo '<p> ' . $_SESSION['message'] . ' </p>';
+        }
+        unset($_SESSION['message']);
+
+        ?>
     </form>
 </body>
 
