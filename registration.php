@@ -20,9 +20,8 @@ if (isset($_SESSION['user'])) {
 <!-- страница с формой для ввода данных для регистрации -->
 
 <body>
+    <h2>Регистрация</h2>
     <form action="vendor/signup.php" method="post">
-
-        <h2>Регистрация</h2>
 
         <label>Имя</label>
         <input type="text" name="name">
@@ -42,16 +41,16 @@ if (isset($_SESSION['user'])) {
         <button type="submit">Зарегистрироваться</button>
         <a href="/">Уже есть аккаунт</a>
 
-        <!-- вывод ошибки аутентификации -->
-
-        <?php
-        if (isset($_SESSION['message'])) {
-            echo '<p> ' . $_SESSION['message'] . ' </p>';
-        }
-        unset($_SESSION['message']);
-        ?>
-
     </form>
+
+    <!-- вывод ошибки аутентификации -->
+
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo '<p> ' . $_SESSION['message'] . ' </p>';
+    }
+    unset($_SESSION['message']);
+    ?>
 </body>
 
 </html>

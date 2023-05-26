@@ -20,9 +20,8 @@ if (isset($_SESSION['user'])) {
 <!-- корневая страница, форма входа -->
 
 <body>
+    <h2>Главная страница</h2>
     <form action="vendor/signin.php" method="post">
-
-        <h2>Главная страница</h2>
 
         <!-- Yandex SmartCaptcha пока не подключена -->
 
@@ -35,16 +34,16 @@ if (isset($_SESSION['user'])) {
         <button type="submit">Войти</button>
         <a href="registration.php">Ещё нет аккаунта</a>
 
-        <!-- вывод ошибки аутентификации -->
-
-        <?php
-        if (isset($_SESSION['message'])) {
-            echo '<p> ' . $_SESSION['message'] . ' </p>';
-        }
-        unset($_SESSION['message']);
-        ?>
-
     </form>
+
+    <!-- вывод ошибки аутентификации -->
+
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo '<p> ' . $_SESSION['message'] . ' </p>';
+    }
+    unset($_SESSION['message']);
+    ?>
 </body>
 
 </html>

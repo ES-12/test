@@ -18,6 +18,8 @@ $user = mysqli_fetch_assoc($login_check);
 
 if (!empty($user)) {
 
+    //заполнение данными пользователя из БД
+
     $_SESSION['user'] = [
         "id" => $user['id'],
         "name" => $user['name'],

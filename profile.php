@@ -20,24 +20,25 @@ if (!$_SESSION['user']) {
 <!-- страница с профилем пользователя и кнопкой для выхода -->
 
 <body>
+    <h2>Профиль пользователя</h2>
     <form>
-        <h2>Профиль пользователя</h2>
+
         <!-- <h2>id: <?= $_SESSION['user']['id'] ?></h2> -->
         <h2>Имя: <?= $_SESSION['user']['name'] ?></h2>
         <h2>Телефон: <?= $_SESSION['user']['phone_number'] ?></h2>
         <h2>Почта: <?= $_SESSION['user']['email'] ?></h2>
+
         <a href="edit.php">Изменение данных</a>
         <a href="vendor/logout.php">Выход</a>
 
-
-        <?php
-        if (isset($_SESSION['message'])) {
-            echo '<p> ' . $_SESSION['message'] . ' </p>';
-        }
-        unset($_SESSION['message']);
-
-        ?>
     </form>
+    <!-- вывод сообщения об успешном изменении данных -->
+    <?php
+    if (isset($_SESSION['message'])) {
+        echo '<p> ' . $_SESSION['message'] . ' </p>';
+    }
+    unset($_SESSION['message']);
+    ?>
 </body>
 
 </html>
