@@ -39,12 +39,12 @@ if (!$_SESSION['user']) {
         <button type="submit">Изменить почту</button>
     </form>
 
-    <form action="vendor/email_edit.php" method="post">
+    <form action="vendor/password_edit.php" method="post">
         <label>Новый пароль</label>
-        <input type="password" name="password">
+        <input type="password" name="new_password">
 
         <label>Подтверждение пароля</label>
-        <input type="password" name="password_confirm">
+        <input type="password" name="new_password_confirm">
         <button type="submit">Изменить пароль</button>
     </form>
 
